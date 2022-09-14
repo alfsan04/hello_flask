@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -14,3 +14,7 @@ def salida():
 @app.route("/doble/<int:numero>")
 def doble(numero):
     return "el doble de número es " + str(numero*2)
+
+@app.route("/primerhtml")
+def primerhtml():
+    return render_template("hola.html")
